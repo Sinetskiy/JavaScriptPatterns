@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 2</title>
+    <script src="example2.js"></script>
+</head>
+<body>
+
+
+<script type="application/javascript" language="JavaScript">
+
+    //Публикуем в тему
+    events.publish('/page/load', {
+        url: '/some/url/path' // любой аргумент
+    });
+</script>
+
+<script type="application/javascript" language="JavaScript">
+
+    //подписываемся на тему, чтобы получать уведомления о событиях
+    var subscription = events.subscribe('/page/load', function(obj) {
+        // делаем что-нибудь, когда событие происходит
+        console.log(obj);
+    });
+
+    // ...теперь мне эта подписка больше не нужна...
+    subscription.remove();
+</script>
+</body>
+</html>

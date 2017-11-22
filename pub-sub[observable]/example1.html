@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 1</title>
+    <script src="example1.js"></script>
+</head>
+<body>
+
+<script type="application/javascript" language="JavaScript">
+
+    pubSub = new PubSub();
+    pubSub.subscribe('myEvent', function(arg){alert("myEvent worked. Arg: " + arg);});
+    pubSub.publish('myEvent', 'it myArg');
+</script>
+</body>
+</html>
